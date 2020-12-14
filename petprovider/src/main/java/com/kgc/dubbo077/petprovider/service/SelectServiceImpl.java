@@ -26,4 +26,10 @@ public class SelectServiceImpl implements SelectService {
         }
         return pets;
     }
+
+    @Override
+    public int add(Pet pet) {
+        int i = petMapper.insertSelective(pet);
+        return i;
+    }
 }
