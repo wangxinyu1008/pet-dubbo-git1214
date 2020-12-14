@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="/js/Jquery.js"></script>
+</head>
+<body>
+<form th:action="@{/}" method="post">
+    <p align="center">
+        品种&nbsp;
+        <select name="type">
+            <option value="请选择">--请选择--</option>
+            <option value="金毛">金毛</option>
+            <option value="拉布拉多">拉布拉多</option>
+            <option value="泰迪">泰迪</option>
+        </select>
+        <input type="submit" value="查询">&nbsp;
+        <a href="/toAdd">新增宠物</a>
+    </p>
+</form>
+<table border="1" align="center" style="width:600px;height: 160px;">
+    <tr align="center" style="background-color: #9C9A9F;font-weight: bolder">
+        <td>宠物昵称</td>
+        <td>出生日期</td>
+        <td>性别</td>
+    </tr>
+        <tr th:each="" align="center" class="bian">
+            <td th:text=""></td>
+            <td th:text=""></td>
+            <td th:text=""></td>
+        </tr>
+</table>
+</body>
+</html>
+<script type="text/javascript">
+    $(".bian:odd").css("background-color","#97D1FA");
+</script>

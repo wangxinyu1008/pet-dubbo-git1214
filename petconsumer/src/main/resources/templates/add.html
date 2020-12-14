@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="/js/Jquery.js"></script>
+</head>
+<body>
+<form action="/doAdd" method="post">
+    <h3>宠物的基本信息</h3>
+    <p>昵称：<input type="text" name="petName"></p>
+    <p>品种：<select name="petBreed">
+        <option value="请选择">--请选择--</option>
+        <option value="金毛">金毛</option>
+        <option value="拉布拉多">拉布拉多</option>
+        <option value="泰迪">泰迪</option>
+    </select>
+    </p>
+    <p>性别：<input type="radio" value="雄" name="petSex" checked>雄<input type="radio" value="雌" name="petSex">雌
+    </p>
+    <p>出生日期：<input type="text" name="birthday">yyyy-mm-dd</p>
+    <p>宠物描述：<textarea rows="5" cols="30" name="description"></textarea></p>
+    <p>
+        <input value="提交" type="submit">
+        <input type="reset">
+    </p>
+</form>
+
+</body>
+
+</html>
+<script type="text/javascript">
+    $("form").submit(function () {
+        var name=$("[name='petName']").val();
+        var type=$("[name='petBreed']").val();
+        var birthday=$("[name='birthday']").val();
+        if(name==""){
+            alert("昵称不能为空!");
+            return false;
+        }
+        if(type=="请选择"){
+            alert("请选择品种!");
+            return false;
+        }
+        var reg = /^[1-9]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/;
+        var regExp = new RegExp(reg);
+        if(!regExp.test(birthday)){
+            alert("日期格式不正确");
+            return false;
+        }
+        return true;
+    })
+</script>
