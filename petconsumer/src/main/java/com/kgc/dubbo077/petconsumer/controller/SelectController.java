@@ -32,7 +32,7 @@ public class SelectController {
             return "redirect:/";
         }else {
             session.setAttribute("msg","添加失败！！！");
-            return "redirect:/";
+            return "redirect:/toadd";
         }
     }
 
