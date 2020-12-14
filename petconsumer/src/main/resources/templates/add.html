@@ -6,10 +6,10 @@
     <script type="text/javascript" src="/js/Jquery.js"></script>
 </head>
 <body>
-<form action="/doAdd" method="post">
+<form th:action="@{/doadd}" method="post">
     <h3>宠物的基本信息</h3>
     <p>昵称：<input type="text" name="petName"></p>
-    <p>品种：<select name="petBreed">
+    <p>品种：<select name="petBread">
         <option value="请选择">--请选择--</option>
         <option value="金毛">金毛</option>
         <option value="拉布拉多">拉布拉多</option>

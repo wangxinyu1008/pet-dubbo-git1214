@@ -19,7 +19,7 @@
             <option value="泰迪">泰迪</option>
         </select>
         <input type="submit" value="查询">&nbsp;
-        <a href="/toAdd">新增宠物</a>
+        <a href="/toadd">新增宠物</a>
     </p>
 </form>
 <table border="1" align="center" style="width:600px;height: 160px;">
@@ -36,6 +36,6 @@
             <td>删除</td>
         </tr>
 </table>
-
+<p align="center" style="color: red;" th:value="${session.msg}"></p>
 </body>
 </html>
