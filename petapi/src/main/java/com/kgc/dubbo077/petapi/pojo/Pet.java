@@ -1,8 +1,9 @@
 package com.kgc.dubbo077.petapi.pojo;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Pet {
+public class Pet implements Serializable {
     private Integer petId;
 
     private String petName;

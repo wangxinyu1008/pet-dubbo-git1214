@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script type="text/javascript" src="/js/Jquery.js"></script>
+    <script type="text/javascript">
+        $(".bian:odd").css("background-color","#97D1FA");
+    </script>
 </head>
 <body>
 <form th:action="@{/}" method="post">
     <p align="center">
         品种&nbsp;
         <select name="type">
-            <option value="请选择">--请选择--</option>
+            <option value="null">--请选择--</option>
             <option value="金毛">金毛</option>
             <option value="拉布拉多">拉布拉多</option>
             <option value="泰迪">泰迪</option>
@@ -24,15 +27,15 @@
         <td>宠物昵称</td>
         <td>出生日期</td>
         <td>性别</td>
+        <td>操作</td>
     </tr>
-        <tr th:each="" align="center" class="bian">
-            <td th:text=""></td>
-            <td th:text=""></td>
-            <td th:text=""></td>
+        <tr th:each="pet:${pets}" align="center" class="bian">
+            <td th:text="${pet.petName}"></td>
+            <td th:text="${#dates.format(pet.birthday,'yyyy-MM-dd')}"></td>
+            <td th:text="${pet.petSex}"></td>
+            <td>删除</td>
         </tr>
 </table>
+
 </body>
 </html>
-<script type="text/javascript">
-    $(".bian:odd").css("background-color","#97D1FA");
-</script>
