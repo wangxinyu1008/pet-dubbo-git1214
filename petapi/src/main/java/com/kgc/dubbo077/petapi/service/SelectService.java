@@ -7,4 +7,5 @@ import java.util.List;
 public interface SelectService {
     List<Pet> selectAll(String bread);
     int add(Pet pet);
+    int delete(Integer petId);
 }

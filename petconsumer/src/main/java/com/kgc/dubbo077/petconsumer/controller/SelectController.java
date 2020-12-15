@@ -35,5 +35,10 @@ public class SelectController {
             return "redirect:/toadd";
         }
     }
+    @RequestMapping("/delete")
+    public String delete(Integer petId){
+        int delete=selectService.delete(petId);
+        return "redirect:/";
+    }
 
 }
