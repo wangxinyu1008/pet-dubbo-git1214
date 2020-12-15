@@ -33,7 +33,9 @@
             <td th:text="${pet.petName}"></td>
             <td th:text="${#dates.format(pet.birthday,'yyyy-MM-dd')}"></td>
             <td th:text="${pet.petSex}"></td>
-            <td>删除</td>
+            <td>
+                <a th:href="@{/delete(petId=${pet.petId})}" th:text="删除"></a>
+            </td>
         </tr>
 </table>
 <p align="center" style="color: red;" th:value="${session.msg}"></p>

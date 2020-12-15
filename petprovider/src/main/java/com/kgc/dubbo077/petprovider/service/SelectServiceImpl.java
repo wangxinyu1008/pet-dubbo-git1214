@@ -32,4 +32,9 @@ public class SelectServiceImpl implements SelectService {
         int i = petMapper.insertSelective(pet);
         return i;
     }
+
+    @Override
+    public int delete(Integer petId) {
+        return petMapper.deleteByPrimaryKey(petId);
+    }
 }
